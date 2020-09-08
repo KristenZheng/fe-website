@@ -11,12 +11,14 @@ const routes = [
       {
         path: '/home',
         name: 'Home',
-        component: () => import('@/pages/home/index.vue')
+        component: () => import('@/pages/home/index.vue'),
+        meta: { name: 'home' }
       },
       {
         path: '/contract',
         name: 'Contract',
-        component: () => import('@/pages/contract/index.vue')
+        component: () => import('@/pages/contract/index.vue'),
+        meta: { name: 'contract' }
       },
       {
         path: '/aboutUs',
