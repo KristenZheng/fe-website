@@ -8,7 +8,7 @@
           <br />We provide rentable powerbank with hubs without any deposit,
           Offer a service without any investment in electrical outlets or cables!
         </p>
-        <el-button type="info" round>Order now！</el-button>
+        <button>Order now！</button>
       </div>
     </div>
     <div class="main">
@@ -16,7 +16,7 @@
       <div class="benefits">
         <dl>
           <dt>
-            <img src="../../../public/images/7.png" />
+            <img src="../../../public/images/two.png" />
           </dt>
           <dd class="dl-title">Increase revenue</dd>
           <dd>
@@ -26,7 +26,7 @@
         </dl>
         <dl>
           <dt>
-            <img src="../../../public/images/8.png" />
+            <img src="../../../public/images/three.png" />
           </dt>
           <dd class="dl-title">Friendly experience</dd>
           <dd>
@@ -37,7 +37,7 @@
         </dl>
         <dl class="benefits-dl">
           <dt>
-            <img src="../../../public/images/9.png" />
+            <img src="../../../public/images/four.png" />
           </dt>
           <dd class="dl-title">share the profits</dd>
           <dd>
@@ -50,7 +50,7 @@
 
       <div class="hubs">
         <div class="hubs-img">
-          <img src="../../../public/images/10.png" />
+          <img src="../../../public/images/five.png" />
         </div>
         <div class="hubs-content">
           <h2>HUBS and powerbank</h2>
@@ -74,17 +74,17 @@
           </p>
         </div>
         <div class="hubs-img">
-          <img src="../../../public/images/11.png" />
+          <img src="../../../public/images/six.png" />
         </div>
       </div>
     </div>
     <div class="footer">
       <h3>Our partners</h3>
       <p>
-        <img src="../../../public/images/12.png" />
+        <img src="../../../public/images/seven.png" />
       </p>
       <p>
-        <img src="../../../public/images/13.png" />
+        <img src="../../../public/images/eight.png" />
       </p>
     </div>
   </div>
@@ -104,7 +104,7 @@ export default {
   .banner {
     width: 100%;
     height: 5.2rem;
-    background: url("../../../public/images/3.png");
+    background: url("../../../public/images/one.png");
     background-repeat: no-repeat;
     background-size: 100%;
     .content {
@@ -115,11 +115,12 @@ export default {
       h2 {
         font-size: 0.3rem;
       }
-      .el-button {
+      button {
         color: #3c3c3c;
         font-size: 0.12rem;
-        width: 0.9rem;
-        line-height: 0.02rem;
+        outline: none;
+        border-radius: 15px;
+        border: 0;
         background: #ffffff;
       }
     }
@@ -208,13 +209,13 @@ export default {
 
   .footer {
     width: 100%;
-   margin-top: 5%;
+    margin-top: 5%;
     h3 {
       font-size: 0.23rem;
       text-align: center;
       color: #56565f;
     }
-    img{
+    img {
       width: 12.8rem;
       height: 0.6rem;
     }
