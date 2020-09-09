@@ -119,7 +119,7 @@ export default {
         color: #3c3c3c;
         font-size: 0.12rem;
         outline: none;
-        border-radius: 15px;
+        border-radius: 0.1rem;
         border: 0;
         background: #ffffff;
       }
