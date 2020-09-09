@@ -74,6 +74,7 @@ export default {
       window.onscroll = function() {
         let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         that.isScroll = (scrollTop / 150) > 0.5;
+   
       }
     },
     handleChoosePage(type) {
