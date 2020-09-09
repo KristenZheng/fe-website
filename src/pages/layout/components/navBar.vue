@@ -1,93 +1,93 @@
-<!--
- * @Author: your name
- * @Date: 2020-09-07 15:01:50
- * @LastEditTime: 2020-09-08 07:45:30
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: /fe-website/src/pages/layout/components/navBar.vue
--->
 <template>
-  <div class="nav-container">
-    <template v-if="!isScroll">
-      <div class="nav-left">
-        <img src="@/assets/logo1.png"/>
-      </div>
-      <div class="nav-right">
+  <div :class="['nav-container', {'nav-fix': isScroll}]">
+    <div class="nav-left">
+      <img src="@/assets/logo1.png"/>
+    </div>
+    <div class="nav-right">
+      <template v-if="!currName || !isScroll">
         <div 
-          :class="['menu-item', {'choosed': currPage === 'home'}]"
+          :class="['menu-item', {'choosed': currName === 'home'}]"
           @click="handleChoosePage('home')">
           Home
         </div>
         <div 
-          :class="['menu-item', {'choosed': currPage === 'contract'}]"
+          :class="['menu-item', {'choosed': currName === 'contract'}]"
           @click="handleChoosePage('contract')">
           Contact
         </div>
         <div 
-          :class="['menu-item', {'choosed': currPage === 'aboutUs'}]"
+          :class="['menu-item', {'choosed': currName === 'aboutUs'}]"
           @click="handleChoosePage('aboutUs')">
           About us
         </div>
-      </div>
-    </template>
-    <template v-else class="scroll-container">
-    <!-- <template> -->
-      <div class="nav-left">
-        <img src="@/assets/logo1.png"/>
-      </div>
-      <div class="nav-right">
-        <div v-if="currName === 'home'">
-          <div class="download-container">
-            <img class="download-style" src="@/assets/download_ios.png"/>
-            <img class="download-style" src="@/assets/download_android.png"/>
-          </div>
-          <div 
-            class="right-item"
-            @click="handleChoosePage('joinUs')">
-            Join us
-          </div>
+      </template>
+      <template v-if="isScroll && currName === 'home'">
+        <div class="download-container">
+          <img 
+            class="download-style" 
+            @click="handleDownLoad('ios')" 
+            src="@/assets/download_ios.png"/>
+          <img 
+            class="download-style" 
+            @click="handleDownLoad('android')" 
+            src="@/assets/download_android.png"/>
         </div>
-        <div class="input-contaner" v-if="currName === 'contract'">
+        <div 
+          class="right-item"
+          @click="handleChoosePage('joinUs')">
+          Join us
+        </div>
+      </template>
+      <template v-if="isScroll && currName === 'contract'">
+        <div class="input-contaner">
           <input class="footer-input" type="text" placeholder="Send us your Email"/>
           <div class="send-container">
-            <img class="send-style" src="@/assets/send_icon2.png"/>
+            <img class="send-style" @click="handleSendEmail" src="@/assets/send_icon2.png"/>
           </div>
         </div>
-        
-      </div>
-    </template>
+      </template>
+    </div>
   </div>
 </template>
 
 <script>
+import { downloadPath } from '@/utils/const.js';
 export default {
   data() {
     return {
-      currPage: 'home',
-      scrollTop: 0
+      isScroll: false,
     }
   },
   mounted() {
     this.onwatchScroll();
   },
   computed: {
-    isScroll() {
-      return (this.scrollTop / 150) > 0.5;
-    },
     currName() {
       return this.$route.meta.name;
-    }
+    },
   },
   methods: {
     onwatchScroll() {
+      let that = this
       window.onscroll = function() {
         let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        console.log('scrollTop', (this.scrollTop / 150) > 0.5);
-        this.scrollTop = scrollTop;
+        that.isScroll = (scrollTop / 150) > 0.5;
       }
     },
     handleChoosePage(type) {
-      this.currPage = type;
+      let paths = {
+        'home': '/home',
+        'contract': '/contract',
+        'aboutUs': '/aboutUs',
+        'joinUs': '/contract'
+      }
+      this.$router.push(paths[type]);
+    },
+    handleDownLoad(type) {
+      window.open(downloadPath[type]);
+    },
+    handleSendEmail() {
+      // send email
     }
   }
 }
@@ -180,7 +180,7 @@ export default {
   height: 0.16rem;
   margin-top: 0.03rem;
 }
-.scroll-container {
+.nav-fix {
   position: fixed;
   top: 0;
   left: 0;

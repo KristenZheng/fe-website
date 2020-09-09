@@ -23,17 +23,20 @@ const routes = [
       {
         path: '/aboutUs',
         name: 'AboutUs',
-        component: () => import('@/pages/aboutUs/index.vue')
+        component: () => import('@/pages/aboutUs/index.vue'),
+        meta: { name: 'aboutUs' }
       },
       {
         path: '/privacy',
         name: 'Privacy',
-        component: () => import('@/pages/privacy/index.vue')
+        component: () => import('@/pages/privacy/index.vue'),
+        meta: { name: 'privacy' }
       },
       {
         path: '/userAgreement',
         name: 'UserAgreement',
-        component: () => import('@/pages/userAgreement/index.vue')
+        component: () => import('@/pages/userAgreement/index.vue'),
+        meta: { name: 'userAgreement' }
       },
     ]
   }
