@@ -2,10 +2,10 @@
 <template>
   <div class="footer-container">
     <div class="footer-left">
-      <div class="left-item">Join us</div>
-      <div class="left-item">About us</div>
-      <div class="left-item">User Agreement</div>
-      <div class="left-item">Privacy</div>
+      <div class="left-item" @click="handleChoosePage('joinUs')">Join us</div>
+      <div class="left-item" @click="handleChoosePage('aboutUs')">About us</div>
+      <div class="left-item" @click="handleChoosePage('userAgreement')">User Agreement</div>
+      <div class="left-item" @click="handleChoosePage('privacy')">Privacy</div>
     </div>
     <div class="footer-center">
       <img class="logo-style" src="@/assets/logo2.png"/>
@@ -19,11 +19,31 @@
     </div>
     <div class="footer-right">
       <p class="right-text">Download the APP</p>
-      <img src="@/assets/download_ios.png"/>
-      <img src="@/assets/download_android.png"/>
+      <img @click="handleDownLoad('ios')" src="@/assets/download_ios.png"/>
+      <img @click="handleDownLoad('android')" src="@/assets/download_android.png"/>
     </div>
   </div>
 </template>
+
+<script>
+import { downloadPath } from '@/utils/const.js';
+export default {
+  methods: {
+    handleChoosePage(type) {
+      let paths = {
+        'aboutUs': '/aboutUs',
+        'joinUs': '/contract',
+        'userAgreement': '/userAgreement',
+        'privacy': '/privacy'
+      }
+      this.$router.push(paths[type]);
+    },
+    handleDownLoad(type) {
+      window.open(downloadPath[type]);
+    },
+  }
+}
+</script>
 
 <style scoped>
 .footer-container {
