@@ -8,7 +8,7 @@
           <br />We provide rentable powerbank with hubs without any deposit,
           Offer a service without any investment in electrical outlets or cables!
         </p>
-        <button>Order now！</button>
+        <button @click="changeValue()">Order now！</button>
       </div>
     </div>
     <div class="main">
@@ -77,15 +77,53 @@
           <img src="../../../public/images/six.png" />
         </div>
       </div>
+      <div class="partners">
+        <h3>Our partners</h3>
+        <p>
+          <img src="../../../public/images/seven.png" />
+        </p>
+        <p>
+          <img src="../../../public/images/eight.png" />
+        </p>
+      </div>
     </div>
-    <div class="footer">
-      <h3>Our partners</h3>
-      <p>
-        <img src="../../../public/images/seven.png" />
-      </p>
-      <p>
-        <img src="../../../public/images/eight.png" />
-      </p>
+    <div class="footer" id="footer">
+      <div class="footer-title">
+        <p>Our partners to you</p>
+      </div>
+
+      <div style="display:flex">
+        <div class="footer-left">
+          <h4>Our responsibllity</h4>
+          <p>
+            Vi sköter allt arbete med stationerna så att din personal kan
+            <br />fokusera på det som är viktigt
+          </p>
+          <div>
+            <ul>
+              <li>Gratis leverans & installation från Wim</li>
+              <li>Alla kundfrågor sköter vi genom appen, 24/7</li>
+              <li>Vi hjälper dig att ta fram material till skärmen</li>
+              <li>Gratis exponering i appen mot tusentals användare</li>
+              <li>Vi löser allt underhåll och fyller på powerbanks</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-right">
+          <h4>Your responsibllity</h4>
+          <p>
+            Som partner med Wim är det inte mycket du behöver tänka på,
+            <br />vi sköter så gott som allt. Det enda vi behöver från er är:
+          </p>
+          <div>
+            <ul>
+              <li>Låt stationen sitta inkopplad i ett el-uttag</li>
+              <li>Placera stationen synligt & lättillgängligt för dina gäster</li>
+              <li>That's it, vi sköter resten</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -93,6 +131,22 @@
 <script>
 export default {
   name: "Contact",
+  data() {
+    return {
+      // isActive: true,
+    };
+  },
+  mounted() {},
+  methods: {
+    changeValue() {
+      let obj = document.getElementById("footer");
+      let scrollTop = obj.offsetTop;
+      window.scrollTo({
+        top: scrollTop,
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
 
@@ -205,19 +259,53 @@ export default {
         }
       }
     }
-  }
 
+    .partners {
+      width: 100%;
+      margin-top: 5%;
+      h3 {
+        font-size: 0.23rem;
+        text-align: center;
+        color: #56565f;
+      }
+      img {
+        width: 12.8rem;
+        height: 0.6rem;
+      }
+    }
+  }
   .footer {
     width: 100%;
-    margin-top: 5%;
-    h3 {
-      font-size: 0.23rem;
+    background: #8e8e8e;
+
+    .footer-title {
       text-align: center;
-      color: #56565f;
+      color: #ffffff;
+      font-size: 0.24rem;
     }
-    img {
-      width: 12.8rem;
-      height: 0.6rem;
+    .footer-left,
+    .footer-right {
+      margin-left: 15%;
+      h4 {
+        font-size: 0.2rem;
+        color: #ffffff;
+      }
+      p {
+        color: #ffffff;
+        font-size: 0.14rem;
+      }
+      ul {
+        font-size: 0.14rem;
+        color: #ffffff;
+
+        li {
+          line-height: 0.3rem;
+          list-style-image: url("../../../public/images/nine.png");
+        }
+      }
+    }
+    .footer-right {
+      margin-left: 10%;
     }
   }
 }
