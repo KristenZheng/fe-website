@@ -26,11 +26,11 @@
           <img 
             class="download-style" 
             @click="handleDownLoad('ios')" 
-            src="@/assets/download_ios.png"/>
+            src="@/assets/download_ios1.png"/>
           <img 
             class="download-style" 
             @click="handleDownLoad('android')" 
-            src="@/assets/download_android.png"/>
+            src="@/assets/download_android1.png"/>
         </div>
         <div 
           class="right-item"
@@ -105,6 +105,7 @@ export default {
   justify-content: space-between;
   padding: 0.12rem;
   align-items: center;
+  z-index: 10001;
 }
 .nav-left img{
   width: 1rem;
