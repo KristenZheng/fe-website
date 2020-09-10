@@ -64,16 +64,158 @@
       </div>
     </div>
     <div class="home-middle2">
-      <div>
 
-      </div>
+      <!-- <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide-container">
+            <img src="@/assets/scenes_img1.png"/>
+            <div class="padding-style">
+              <p class="title">Restaurant, Cafe, Bar&Club-</p>
+              <p class="sub-title">Electra hubs fit perfectly in any kind of store! Electra lets your guests 
+  charge their phone at any time, without any expensive investment on 
+  adding more electrical outlets or cables. Our units is very self-explained 
+  and your staff can focus on providing the best service to your customers  
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide slide-container">
+            <img src="@/assets/scenes_img2.png"/>
+            <div class="padding-style">
+              <p class="title">Events&Exhibitions-</p>
+              <p class="sub-title">Electra can help the visitors to fully enjoy the event without worrying 
+  about their phone battery. Event organizers will no longer need to fix 
+  expensive and complicated power infrastrcutres 
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide slide-container">
+            <img src="@/assets/scenes_img3.png"/>
+            <div class="padding-style">
+              <p class="title">Airport, Train station & Metro-</p>
+              <p class="sub-title">Electrical outlets and charging slots are never enough, especially after 
+    long delays.  With Electra, travellers will no longer need to pack their 
+    power bank, find the ligninght cable or usb cable or type-c cable, and can 
+    charge their phone wherever they want when on transit  
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div> -->
+      
+       <swiper class="swiper-container" :options="swiperOption">
+        <div class="swiper-slide slide-container">
+          <img src="@/assets/scenes_img1.png"/>
+          <div class="padding-style">
+            <p class="title">Restaurant, Cafe, Bar&Club-</p>
+            <p class="sub-title">Electra hubs fit perfectly in any kind of store! Electra lets your guests 
+charge their phone at any time, without any expensive investment on 
+adding more electrical outlets or cables. Our units is very self-explained 
+and your staff can focus on providing the best service to your customers  
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide slide-container">
+          <img src="@/assets/scenes_img2.png"/>
+          <div class="padding-style">
+            <p class="title">Events&Exhibitions-</p>
+            <p class="sub-title">Electra can help the visitors to fully enjoy the event without worrying 
+about their phone battery. Event organizers will no longer need to fix 
+expensive and complicated power infrastrcutres 
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide slide-container">
+          <img src="@/assets/scenes_img3.png"/>
+          <div class="padding-style">
+            <p class="title">Airport, Train station & Metro-</p>
+            <p class="sub-title">Electrical outlets and charging slots are never enough, especially after 
+  long delays.  With Electra, travellers will no longer need to pack their 
+  power bank, find the ligninght cable or usb cable or type-c cable, and can 
+  charge their phone wherever they want when on transit  
+            </p>
+          </div>
+        </div>
+        <div class="swiper-pagination" slot="pagination"></div>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+        <!-- <div class="pagi-style">
+          
+        </div> -->
+      </swiper>
+
     </div>
   </div>
 </template>
 
+<script src="../package/swiper-bundle.min.js"></script>
 <script>
 import { downloadPath } from '@/utils/const.js';
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
 export default {
+  data() {
+    return {
+      name: 'swiper-example-default',
+      title: 'Default',
+      components: {
+        Swiper,
+        SwiperSlide
+      },
+      swiper: null,
+      swiperOption: {
+        slidesPerView: 1,
+        // spaceBetween: 30,
+        // slidesPerGroup: 4,
+        //第一个轮播
+        autoplay: true,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+      images: [
+        'scenes_img1.png',
+        'scenes_img2.png',
+        'scenes_img3.png'
+      ]
+      // swiperOption: {
+      //   pagination: {
+      //     el: '.swiper-pagination',
+      //     clickable :true
+      //   },
+      //   paginationClickable :true,
+      //   mousewheelControl: true,
+      //   navigation: {
+      //     nextEl: '.swiper-button-next',
+      //     prevEl: '.swiper-button-prev'
+      //   },
+      //   observer:true,
+      //   observeParents:true,
+      //   autoplay: true,
+      //   loop: true,
+      //   direction: 'horizontal'
+      // }
+    }
+  },
+  mounted() {
+    // this.swiper = new Swiper('.swiper-container', this.swiperOptions);
+    // console.log('Current Swiper instance object', this.swiper)
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  },
   methods: {
     handleDownLoad(type) {
       window.open(downloadPath[type]);
@@ -82,7 +224,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .download-style {
   width: 1.02rem;
   height: 0.28rem;
@@ -171,5 +313,71 @@ export default {
 .home-middle2 {
   height: 4.48rem;
   margin-bottom: 0.61rem;
+  position: relative;
+}
+.swiper-container {
+  width: 100%;
+  height: 4.48rem;
+  --swiper-pagination-color: #3C3C3C;
+}  
+.slide-container {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.slide-container img {
+  width: 50%;
+}
+.slide-container .title {
+  font-size: 0.16rem;
+  font-family: Helvetica-Bold, Helvetica;
+  font-weight: bold;
+  color: #3C3C3C;
+  line-height: 0.22rem;
+}
+.slide-container .sub-title {
+  font-size: 0.11rem;
+  font-family: Helvetica;
+  color: #575757;
+  line-height: 0.15rem;
+}
+.padding-style {
+  padding-left: 0.49rem;
+  padding-right: 0.81rem;
+}
+.swiper-button-next {
+  right: 0.81rem;
+  top: 4rem;
+  height: 0.2rem;
+  width: 0.2rem;
+  background-image: url('../../assets/slide_icon.png');
+  background-size: 0.2rem;
+}
+.swiper-button-next:after {
+  content: '';
+  font-family: '';
+}
+.swiper-button-prev {
+  left: calc(50% + 0.49rem);
+  top: 4rem;
+  height: 0.2rem;
+  width: 0.2rem;
+  border-radius: 50%;
+  background: #BFBFBF;
+}
+.swiper-button-prev:after {
+  content: '';
+  font-family: '';
+}
+.pagi-style {
+  position: absolute;
+  left: calc(50% + 0.49rem);
+  top: 4rem;
+  width: calc(50% - 1.3rem);
+  height: 1rem;
+}
+.swiper-pagination-bullets {
+  left: 2.2rem;
+  top: 3.85rem;
 }
 </style>
