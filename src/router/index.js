@@ -17,7 +17,8 @@ const routes = [
       {
         path: '/contact',
         name: 'Contact',
-        component: () => import('@/pages/contact/index.vue')
+        component: () => import('@/pages/contact/index.vue'),
+        meta: { name: 'contact' }
       },
       {
         path: '/aboutUs',
