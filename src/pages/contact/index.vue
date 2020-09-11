@@ -42,13 +42,12 @@
           <dd class="dl-title">share the profits</dd>
           <dd>
             0 cost-Absolutely free!
-            <br />We will not ask for your deposit or service fee,
-            <br />We will even share the profits with you and your store.
+            <br />We will not ask for your deposit or service fee, We will even share the profits with you and your store.
           </dd>
         </dl>
       </div>
 
-      <div class="hubs">
+      <div class="hubs" >
         <div class="hubs-img">
           <img src="../../../public/images/five.png" />
         </div>
@@ -87,7 +86,7 @@
         </p>
       </div>
     </div>
-    <div class="footer" id="footer">
+    <div class="footer" >
       <div class="footer-title">
         <p>Our partners to you</p>
       </div>
@@ -99,17 +98,26 @@
             Vi sköter allt arbete med stationerna så att din personal kan
             <br />fokusera på det som är viktigt
           </p>
-          <div>
-            <ul>
-              <li>Gratis leverans & installation från Wim</li>
-              <li>Alla kundfrågor sköter vi genom appen, 24/7</li>
-              <li>Vi hjälper dig att ta fram material till skärmen</li>
-              <li>Gratis exponering i appen mot tusentals användare</li>
-              <li>Vi löser allt underhåll och fyller på powerbanks</li>
-            </ul>
-          </div>
+
+          <ul>
+            <li>
+              <img src="../../../public/images/nine.png" />Gratis leverans & installation från Wim
+            </li>
+            <li>
+              <img src="../../../public/images/nine.png" />Alla kundfrågor sköter vi genom appen, 24/7
+            </li>
+            <li>
+              <img src="../../../public/images/nine.png" />Vi hjälper dig att ta fram material till skärmen
+            </li>
+            <li>
+              <img src="../../../public/images/nine.png" />Gratis exponering i appen mot tusentals användare
+            </li>
+            <li>
+              <img src="../../../public/images/nine.png" />Vi löser allt underhåll och fyller på powerbanks
+            </li>
+          </ul>
         </div>
-        <div class="footer-right">
+        <div class="footer-right" id="footer">
           <h4>Your responsibllity</h4>
           <p>
             Som partner med Wim är det inte mycket du behöver tänka på,
@@ -117,9 +125,15 @@
           </p>
           <div>
             <ul>
-              <li>Låt stationen sitta inkopplad i ett el-uttag</li>
-              <li>Placera stationen synligt & lättillgängligt för dina gäster</li>
-              <li>That's it, vi sköter resten</li>
+              <li>
+                <img src="../../../public/images/nine.png" />Låt stationen sitta inkopplad i ett el-uttag
+              </li>
+              <li>
+                <img src="../../../public/images/nine.png" />Placera stationen synligt & lättillgängligt för dina gäster
+              </li>
+              <li>
+                <img src="../../../public/images/nine.png" />That's it, vi sköter resten
+              </li>
             </ul>
           </div>
         </div>
@@ -136,15 +150,15 @@ export default {
       // isActive: true,
     };
   },
-  mounted() {},
   methods: {
     changeValue() {
       let obj = document.getElementById("footer");
-      let scrollTop = obj.offsetTop;
+     let scrollTop = obj.offsetTop;
       window.scrollTo({
         top: scrollTop,
         behavior: "smooth",
       });
+      console.log(top)
     },
   },
 };
@@ -155,6 +169,7 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
+  text-align: left;
   .banner {
     width: 100%;
     height: 5.2rem;
@@ -165,7 +180,7 @@ export default {
       width: 6rem;
       color: #ffffff;
       margin: 0 auto;
-      margin-top: 1.55rem;
+      margin-top: 1.3rem;
       h2 {
         font-size: 0.3rem;
       }
@@ -183,8 +198,7 @@ export default {
     width: 100%;
     flex: 1;
     .title {
-      width: 18%;
-      margin: 0 auto;
+      text-align: center;
       margin-top: 0.3rem;
       font-size: 0.21rem;
       font-family: HiraKakuStdN-W8, HiraKakuStdN;
@@ -193,11 +207,12 @@ export default {
       line-height: 0.36rem;
     }
     .benefits {
-      width: 65%;
+      width: 80%;
       display: flex;
       margin: 0 auto;
+      justify-content: space-between;
       dl {
-        width: 2.8rem;
+        width: 30%;
         text-align: center;
         margin-top: 0.3rem;
         img {
@@ -220,14 +235,6 @@ export default {
         color: #3c3c3c;
         line-height: 0.29rem;
       }
-      .benefits-dl {
-        dd {
-          width: 3.46rem;
-        }
-        img {
-          margin-left: 1.06rem;
-        }
-      }
     }
 
     .hubs {
@@ -238,7 +245,6 @@ export default {
 
       div {
         width: 50%;
-        height: 5.97rem;
       }
       .hubs-img {
         // background: url("../../../public/images/10.png");
@@ -269,8 +275,7 @@ export default {
         color: #56565f;
       }
       img {
-        width: 12.8rem;
-        height: 0.6rem;
+        width: 100%;
       }
     }
   }
@@ -282,10 +287,12 @@ export default {
       text-align: center;
       color: #ffffff;
       font-size: 0.24rem;
+      margin-top: 5%;
     }
     .footer-left,
     .footer-right {
-      margin-left: 15%;
+      margin-left: 5%;
+      margin-top: 5%;
       h4 {
         font-size: 0.2rem;
         color: #ffffff;
@@ -295,12 +302,18 @@ export default {
         font-size: 0.14rem;
       }
       ul {
+        width: 100%;
+        margin-left: 0;
         font-size: 0.14rem;
         color: #ffffff;
+        list-style: none;
 
         li {
-          line-height: 0.3rem;
-          list-style-image: url("../../../public/images/nine.png");
+          line-height: 0.4rem;
+          // list-style-image: url("../../../public/images/nine.png")  ;
+          img {
+            width: 0.13rem;
+          }
         }
       }
     }
