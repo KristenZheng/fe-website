@@ -172,7 +172,7 @@ export default {
   text-align: left;
   .banner {
     width: 100%;
-    height: 5.2rem;
+    height: 4rem;
     background: url("../../../public/images/one.png");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -207,7 +207,7 @@ export default {
       line-height: 0.36rem;
     }
     .benefits {
-      width: 80%;
+      width:75%;
       display: flex;
       margin: 0 auto;
       justify-content: space-between;
@@ -318,7 +318,7 @@ export default {
       }
     }
     .footer-right {
-      margin-left: 10%;
+      margin-left: 21%;
     }
   }
 }
