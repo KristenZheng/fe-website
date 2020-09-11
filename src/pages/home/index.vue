@@ -64,46 +64,6 @@
       </div>
     </div>
     <div class="home-middle2">
-
-      <!-- <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide slide-container">
-            <img src="@/assets/scenes_img1.png"/>
-            <div class="padding-style">
-              <p class="title">Restaurant, Cafe, Bar&Club-</p>
-              <p class="sub-title">Electra hubs fit perfectly in any kind of store! Electra lets your guests 
-  charge their phone at any time, without any expensive investment on 
-  adding more electrical outlets or cables. Our units is very self-explained 
-  and your staff can focus on providing the best service to your customers  
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide slide-container">
-            <img src="@/assets/scenes_img2.png"/>
-            <div class="padding-style">
-              <p class="title">Events&Exhibitions-</p>
-              <p class="sub-title">Electra can help the visitors to fully enjoy the event without worrying 
-  about their phone battery. Event organizers will no longer need to fix 
-  expensive and complicated power infrastrcutres 
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide slide-container">
-            <img src="@/assets/scenes_img3.png"/>
-            <div class="padding-style">
-              <p class="title">Airport, Train station & Metro-</p>
-              <p class="sub-title">Electrical outlets and charging slots are never enough, especially after 
-    long delays.  With Electra, travellers will no longer need to pack their 
-    power bank, find the ligninght cable or usb cable or type-c cable, and can 
-    charge their phone wherever they want when on transit  
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
-      </div> -->
       
        <swiper class="swiper-container" :options="swiperOption">
         <div class="swiper-slide slide-container">
@@ -141,9 +101,6 @@ expensive and complicated power infrastrcutres
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
-        <!-- <div class="pagi-style">
-          
-        </div> -->
       </swiper>
 
     </div>
@@ -283,18 +240,17 @@ export default {
 }
 .home-middle1 {
   background: #F7F8F9;
-  padding: 0 0.57rem;
+  padding: 0 0.57rem 0.85rem 0.57rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  
 }
 .middle-item img {
-  width: 1.63rem;
-  height: 1.64rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .middle-item {
-  width: 1.89rem;
+  width: 1.5rem;
   margin-top: 0.8rem;
 }
 .middle-item .title {

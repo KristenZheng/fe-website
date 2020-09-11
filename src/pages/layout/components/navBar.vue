@@ -6,7 +6,7 @@
     
     </div>
     <div class="nav-right">
-      <template v-if="!currName || !isScroll">
+      <template v-if="normalNames.includes(currName) || !isScroll">
         <div 
           :class="['menu-item', {'choosed': currName === 'home'}]"
           @click="handleChoosePage('home')">
@@ -44,7 +44,7 @@
         <div class="input-contaner">
           <input class="footer-input" type="text" placeholder="Send us your Email"/>
           <div class="send-container">
-            <!-- < img class="send-style" @click="handleSendEmail" src="@/assets/send_icon2.png"/> -->
+            <img class="send-style" @click="handleSendEmail" src="@/assets/send_icon2.png"/>
           </div>
         </div>
       </template>
@@ -58,6 +58,7 @@ export default {
   data() {
     return {
       isScroll: false,
+      normalNames: ['aboutUs', 'privacy', 'userAgreement']
     }
   },
   mounted() {
