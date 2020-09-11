@@ -1,7 +1,9 @@
 <template>
   <div :class="['nav-container', {'nav-fix': isScroll}]">
     <div class="nav-left">
-      <img src="@/assets/logo1.png"/>
+      <img src="@/assets/logo1.png" />
+      <!-- <img src="@/assets/logo1.png" /> -->
+    
     </div>
     <div class="nav-right">
       <template v-if="!currName || !isScroll">
@@ -11,8 +13,8 @@
           Home
         </div>
         <div 
-          :class="['menu-item', {'choosed': currName === 'contract'}]"
-          @click="handleChoosePage('contract')">
+          :class="['menu-item', {'choosed': currName === 'contact'}]"
+          @click="handleChoosePage('contact')">
           Contact
         </div>
         <div 
@@ -38,11 +40,11 @@
           Join us
         </div>
       </template>
-      <template v-if="isScroll && currName === 'contract'">
+      <template v-if="isScroll && currName === 'contact'">
         <div class="input-contaner">
           <input class="footer-input" type="text" placeholder="Send us your Email"/>
           <div class="send-container">
-            <img class="send-style" @click="handleSendEmail" src="@/assets/send_icon2.png"/>
+            <!-- < img class="send-style" @click="handleSendEmail" src="@/assets/send_icon2.png"/> -->
           </div>
         </div>
       </template>
@@ -72,14 +74,15 @@ export default {
       window.onscroll = function() {
         let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         that.isScroll = (scrollTop / 150) > 0.5;
+   
       }
     },
     handleChoosePage(type) {
       let paths = {
         'home': '/home',
-        'contract': '/contract',
+        'contact': '/contact',
         'aboutUs': '/aboutUs',
-        'joinUs': '/contract'
+        'joinUs': '/contact'
       }
       this.$router.push(paths[type]);
     },

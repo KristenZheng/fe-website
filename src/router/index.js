@@ -15,10 +15,9 @@ const routes = [
         meta: { name: 'home' }
       },
       {
-        path: '/contract',
-        name: 'Contract',
-        component: () => import('@/pages/contract/index.vue'),
-        meta: { name: 'contract' }
+        path: '/contact',
+        name: 'Contact',
+        component: () => import('@/pages/contact/index.vue')
       },
       {
         path: '/aboutUs',

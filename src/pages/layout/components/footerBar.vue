@@ -32,7 +32,7 @@ export default {
     handleChoosePage(type) {
       let paths = {
         'aboutUs': '/aboutUs',
-        'joinUs': '/contract',
+        'joinUs': '/contact',
         'userAgreement': '/userAgreement',
         'privacy': '/privacy'
       }
