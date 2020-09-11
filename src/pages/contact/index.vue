@@ -169,6 +169,7 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
+  text-align: left;
   .banner {
     width: 100%;
     height: 5.2rem;
