@@ -19,8 +19,8 @@
     </div>
     <div class="footer-right">
       <p class="right-text">Download the APP</p>
-      <img @click="handleDownLoad('ios')" src="@/assets/download_ios.png"/>
-      <img @click="handleDownLoad('android')" src="@/assets/download_android.png"/>
+      <img @click="handleDownLoad('ios')" src="@/assets/download_ios1.png"/>
+      <img @click="handleDownLoad('android')" src="@/assets/download_android1.png"/>
     </div>
   </div>
 </template>
