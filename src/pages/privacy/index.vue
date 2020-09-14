@@ -245,6 +245,7 @@ export default {
   color: #3c3c3c;
   font-weight: bold;
   line-height: 0.48rem;
+  text-align: center;
 }
 .sub-title {
   color: #999999;
@@ -260,6 +261,7 @@ export default {
   font-weight: 600;
   margin-top: 0.6rem;
   margin-bottom: 0.4rem;
+  text-align: center;
 }
 .content {
   color: #3c3c3c;
@@ -273,5 +275,6 @@ export default {
   font-weight: 300;
   line-height: 0.36rem;
   margin-top: 0.4rem;
+  text-align: center;
 }
 </style>
