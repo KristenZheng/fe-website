@@ -718,6 +718,7 @@ export default {
   color: #3c3c3c;
   font-weight: bold;
   line-height: 0.48rem;
+  text-align: center;
   margin-bottom: 0.1rem;
 }
 .sub-title {
@@ -726,6 +727,7 @@ export default {
   font-weight: 300;
   line-height: 0.33rem;
   margin-bottom: 0.6rem;
+  text-align: center;
 }
 .chapter-title {
   color: #3c3c3c;
@@ -735,12 +737,14 @@ export default {
   font-weight: 600;
   margin-top: 0.8rem;
   margin-bottom: 0.4rem;
+  text-align: center;
 }
 .content {
   color: #3c3c3c;
   font-size: 0.24rem;
   font-weight: 300;
   line-height: 0.36rem;
+ 
 }
 .sub-content {
   color: #3c3c3c;
@@ -748,6 +752,7 @@ export default {
   font-weight: 300;
   line-height: 0.36rem;
   margin-top: 0.4rem;
+   text-align: center;
 }
 .indent-container {
   margin-left: 0.52rem;

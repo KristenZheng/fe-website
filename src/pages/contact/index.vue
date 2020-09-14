@@ -6,7 +6,7 @@
         <p>
           Let us make it easy for you and your customers,
           <br />We provide rentable powerbank with hubs without any deposit,
-          Offer a service without any investment in electrical outlets or cables!
+          <br />Offer a service without any investment in electrical outlets or cables!
         </p>
         <button @click="changeValue()">Order now！</button>
       </div>
@@ -47,35 +47,37 @@
         </dl>
       </div>
 
-      <div class="hubs" >
-        <div class="hubs-img">
+      <div class="hubs">
+        <div class="hubs-top">
           <img src="../../../public/images/five.png" />
+          <div class="hubs-content">
+            <h2>HUBS and powerbank</h2>
+            <p>
+              Simple Design-the hubs always has enough powerbanks,
+              <br />3-in-one cables for all types of phones, lighting/Micro USB/Type-c.
+              <br />flexible size included 5 powerbank.
+            </p>
+            <p>Easy to use-</p>
+          </div>
         </div>
-        <div class="hubs-content">
-          <h2>HUBS and powerbank</h2>
-          <p>
-            Simple Design-the hubs always has enough powerbanks,
-            <br />3-in-one cables for all types of phones, lighting/Micro USB/Type-c.
-            <br />flexible size included 5 powerbank.
-          </p>
-          <p>Easy to use-</p>
-        </div>
-        <div class="hubs-content">
-          <h2>APP</h2>
-          <p>
-            Great experience of Electra App, easy to rent and return,
-            <br />find your nearest Electra hubs, scan QR code to rent,
-            <br />Return to any available hubs
-          </p>
-          <p>
-            Payment methods-We have a global payment solution,
-            <br />accepting all major Credit card provider and PayPal, etc
-          </p>
-        </div>
-        <div class="hubs-img">
+
+        <div class="hubs-footer" style="display:flex">
+          <div class="hubs-content">
+            <h2>APP</h2>
+            <p>
+              Great experience of Electra App, easy to rent and return,
+              <br />find your nearest Electra hubs, scan QR code to rent,
+              <br />Return to any available hubs
+            </p>
+            <p>
+              Payment methods-We have a global payment solution,
+              <br />accepting all major Credit card provider and PayPal, etc
+            </p>
+          </div>
           <img src="../../../public/images/six.png" />
         </div>
       </div>
+
       <div class="partners">
         <h3>Our partners</h3>
         <p>
@@ -86,7 +88,7 @@
         </p>
       </div>
     </div>
-    <div class="footer" >
+    <div class="footer">
       <div class="footer-title">
         <p>Our partners to you</p>
       </div>
@@ -153,12 +155,12 @@ export default {
   methods: {
     changeValue() {
       let obj = document.getElementById("footer");
-     let scrollTop = obj.offsetTop;
+      let scrollTop = obj.offsetTop;
       window.scrollTo({
         top: scrollTop,
         behavior: "smooth",
       });
-      console.log(top)
+      console.log(top);
     },
   },
 };
@@ -170,9 +172,10 @@ export default {
   display: flex;
   flex-direction: column;
   text-align: left;
+  overflow: hidden;
   .banner {
     width: 100%;
-    height: 4rem;
+    // height: 3rem;
     background: url("../../../public/images/one.png");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -180,17 +183,23 @@ export default {
       width: 6rem;
       color: #ffffff;
       margin: 0 auto;
-      margin-top: 1.3rem;
+      margin-top: 0.8rem;
       h2 {
         font-size: 0.3rem;
       }
+      p {
+        width: 71%;
+      }
       button {
+        // width: 22%;
         color: #3c3c3c;
-        font-size: 0.12rem;
+        // font-size: 0.12rem;
         outline: none;
         border-radius: 0.1rem;
         border: 0;
         background: #ffffff;
+        margin-top: 1%;
+        text-align: center;
       }
     }
   }
@@ -207,7 +216,7 @@ export default {
       line-height: 0.36rem;
     }
     .benefits {
-      width:75%;
+      width: 70%;
       display: flex;
       margin: 0 auto;
       justify-content: space-between;
@@ -216,8 +225,8 @@ export default {
         text-align: center;
         margin-top: 0.3rem;
         img {
-          width: 1.42rem;
-          height: 1.42rem;
+          width: 1.32rem;
+          height: 1.32rem;
         }
         dd {
           font-size: 0.14rem;
@@ -239,23 +248,29 @@ export default {
 
     .hubs {
       width: 100%;
-      display: flex;
-      flex-wrap: wrap;
       margin-top: 5%;
 
-      div {
-        width: 50%;
-      }
-      .hubs-img {
-        // background: url("../../../public/images/10.png");
-        img {
-          width: 100%;
+      .hubs-top,
+      .hubs-footer {
+        width: 100%;
+        display: flex;
+        div {
+          width: 50%;
         }
       }
+
+      .hubs-top img {
+        width: 50%;
+      }
+      .hubs-footer img {
+        width: 50%;
+      }
+
+    
       .hubs-content {
         background: #ffffff;
         h2 {
-          margin-top: 30%;
+          margin-top: 10%;
           margin-left: 8%;
         }
         p {
@@ -286,7 +301,7 @@ export default {
     .footer-title {
       text-align: center;
       color: #ffffff;
-      font-size: 0.24rem;
+      font-size: 0.21rem;
       margin-top: 5%;
     }
     .footer-left,
@@ -294,7 +309,7 @@ export default {
       margin-left: 5%;
       margin-top: 5%;
       h4 {
-        font-size: 0.2rem;
+        font-size: 0.18rem;
         color: #ffffff;
       }
       p {
@@ -318,7 +333,7 @@ export default {
       }
     }
     .footer-right {
-      margin-left: 21%;
+      margin-left: 8%;
     }
   }
 }
