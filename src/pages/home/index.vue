@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-07 14:34:51
- * @LastEditTime: 2020-09-08 07:53:57
- * @LastEditors: your name
+ * @LastEditTime: 2020-09-14 16:15:14
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /fe-website/src/pages/home/index.vue
 -->
@@ -13,30 +13,16 @@
       <div class="bg-content">
         <p class="title">Get powered up anytime, anywhere</p>
         <p class="sub-title">Available to charger 99% of all smartphone</p>
-        <div>
-          <img 
-            class="download-style" 
-            @click="handleDownLoad('ios')" 
-            src="@/assets/download_ios3.png"/>
-            <img 
-            class="download-style" 
-            @click="handleDownLoad('ios')" 
-            src="@/assets/download_ios2.png"/>
-          <img 
-            class="download-style" 
-            @click="handleDownLoad('android')" 
-            src="@/assets/download_android3.png"/>
-            <img 
-            class="download-style" 
-            @click="handleDownLoad('android')" 
-            src="@/assets/download_android2.png"/>
+        <div class="list-flex">
+          <div class="download-style-ios" @click="handleDownLoad('ios')"></div>
+          <div class="download-style-android" @click="handleDownLoad('android')" ></div>
         </div>
       </div>
       <div class="video-container">
         <p class="title">Electra</p>
         <p class="sub-title">Empower Your World</p>
         <video class="video-style" autoplay controls width="250">
-          <source src="https://zhuanjia4v-1252768022.cossh.myqcloud.com/hualv/437D2592787911E8862FD89EF30F789D.mp4"
+          <source src="@/assets/home.mp4"
             type="video/webm">
         </video>
       </div>
@@ -102,7 +88,6 @@ expensive and complicated power infrastrcutres
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
-
     </div>
   </div>
 </template>
@@ -124,9 +109,6 @@ export default {
       swiper: null,
       swiperOption: {
         slidesPerView: 1,
-        // spaceBetween: 30,
-        // slidesPerGroup: 4,
-        //第一个轮播
         autoplay: true,
         loop: true,
         loopFillGroupWithBlank: true,
@@ -139,33 +121,9 @@ export default {
           prevEl: ".swiper-button-prev",
         },
       },
-      images: [
-        'scenes_img1.png',
-        'scenes_img2.png',
-        'scenes_img3.png'
-      ]
-      // swiperOption: {
-      //   pagination: {
-      //     el: '.swiper-pagination',
-      //     clickable :true
-      //   },
-      //   paginationClickable :true,
-      //   mousewheelControl: true,
-      //   navigation: {
-      //     nextEl: '.swiper-button-next',
-      //     prevEl: '.swiper-button-prev'
-      //   },
-      //   observer:true,
-      //   observeParents:true,
-      //   autoplay: true,
-      //   loop: true,
-      //   direction: 'horizontal'
-      // }
     }
   },
   mounted() {
-    // this.swiper = new Swiper('.swiper-container', this.swiperOptions);
-    // console.log('Current Swiper instance object', this.swiper)
     var swiper = new Swiper('.swiper-container', {
       navigation: {
         nextEl: '.swiper-button-next',
@@ -177,28 +135,49 @@ export default {
     handleDownLoad(type) {
       window.open(downloadPath[type]);
     },
+
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.download-style {
+<style lang="scss">
+.download-style-ios {
   width: 1.02rem;
   height: 0.28rem;
   margin-top: 0.04rem;
   margin-right: 0.05rem;
+  background-image: url('../../assets/download_ios2.png');
+  background-size: 1.02rem;
+}
+.download-style-ios:hover {
+  background-image: url('../../assets/download_ios3.png');
+}
+.download-style-android {
+  width: 1.02rem;
+  height: 0.28rem;
+  margin-top: 0.04rem;
+  margin-right: 0.05rem;
+  background-image: url('../../assets/download_android2.png');
+  background-size: 1.02rem;
+}
+.download-style-android:hover {
+  background-image: url('../../assets/download_android3.png');
+}
+.list-flex {
+  display: flex;
 }
 .home-top {
   width: 100%;
   height: 9rem;
+  position: relative;
 }
 .bg-style {
   width: 100%;
 }
 .bg-content {
   position: absolute;
-  left: 20%;
-  top: 20%;
+  left: 15%;
+  top: 6%;
   width: 3rem;
   text-align: left;
 }
@@ -207,7 +186,8 @@ export default {
   font-family: HiraKakuStdN-W8, HiraKakuStdN;
   font-weight: normal;
   color: #FFFFFF;
-  line-height: 0.34rem;
+  line-height: 0.28rem;
+  margin-bottom: 0.15rem;
   text-shadow: 0px 0px 0px rgba(67, 136, 101, 0.62);
 }
 .bg-content .sub-title { 
@@ -216,6 +196,7 @@ export default {
   font-weight: 300;
   color: #FFFFFF;
   line-height: 0.18rem;
+  margin-bottom: 0.5rem;
 }
 .video-style {
   width: 5.46rem;
@@ -250,7 +231,7 @@ export default {
   height: 1.5rem;
 }
 .middle-item {
-  width: 1.5rem;
+  width: 2rem;
   margin-top: 0.8rem;
 }
 .middle-item .title {
@@ -332,8 +313,17 @@ export default {
   width: calc(50% - 1.3rem);
   height: 1rem;
 }
-.swiper-pagination-bullets {
-  left: 2.2rem;
-  top: 3.85rem;
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  left: calc(50% - 0.2rem);
+  right: 0.81rem;
+  top: 3.75rem;
+  width: 50% !important;
+  height: .2rem;
+  line-height: .2rem;
 }
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+  width: .08rem;
+  height: .08rem;
+}
+
 </style>
