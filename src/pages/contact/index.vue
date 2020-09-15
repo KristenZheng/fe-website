@@ -1,13 +1,14 @@
 <template>
   <div class="contact">
     <div class="banner">
+      <img src="../../../public/images/one.png" />
       <div class="content">
         <h2>Order a hub for your local!</h2>
-        <p>
-          Let us make it easy for you and your customers,
-          <br />We provide rentable powerbank with hubs without any deposit,
-          <br />Offer a service without any investment in electrical outlets or cables!
-        </p>
+
+        <p>Let us make it easy for you and your customers,</p>
+        <p>We provide rentable powerbank with hubs without any deposit,</p>
+        <p>Offer a service without any investment in electrical outlets or cables!</p>
+
         <button @click="changeValue()">Order now！</button>
       </div>
     </div>
@@ -175,21 +176,25 @@ export default {
   overflow: hidden;
   .banner {
     width: 100%;
-    // height: 3rem;
-    background: url("../../../public/images/one.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
+
+    position: relative;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
     .content {
-      width: 6rem;
+      // width: 6rem;
       color: #ffffff;
-      margin: 0 auto;
-      margin-top: 0.8rem;
+      position: absolute;
+      left: 22.5%;
+      top: 30%;
       h2 {
         font-size: 0.3rem;
       }
       p {
-        width: 71%;
+        font-size: 0.2rem;
       }
+
       button {
         // width: 22%;
         color: #3c3c3c;
@@ -198,7 +203,7 @@ export default {
         border-radius: 0.1rem;
         border: 0;
         background: #ffffff;
-        margin-top: 1%;
+        margin-top: 3%;
         text-align: center;
       }
     }
@@ -266,7 +271,6 @@ export default {
         width: 50%;
       }
 
-    
       .hubs-content {
         background: #ffffff;
         h2 {
